@@ -1,15 +1,35 @@
-  <html>
-    <head>
-      <style>
-        button {
-          height: 30px;
-          width: 30px;
-          outline: none;
+<html>
+  <head>
+  <style>
+  </style>
+  </head>
+
+  <body onload="init();">
+  <script>
+      var choice
+
+      function init() {
+      }
+
+      function generate() {
+        choice = Math.floor(Math.random());
+        document.getElementByID("play").remove();
+        if choice == 1{
+          quiz();
         }
-      </style>
-    </head>
-    <body>
-      <p>This is the index.</p>
-      <button></button>
-    </body>
-  </html>
+      }
+
+      function quiz(){
+        var q1 = document.createElement("BUTTON");
+        var t = document.createTextNode("Yes");
+        q1.appendChild(t);
+        document.getElementByID("game").appendChild(q1);
+      }
+
+  </script>
+    <h1>Flash Notes</h1>
+    <button id="play" onclick="generate"></button>
+    <p id="game"></p>
+  
+  </body>
+</html>
