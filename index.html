@@ -6,25 +6,11 @@
 
   <body>
   <script>
-      jQuery.loadScript = function (url, callback)
-      {
-        jQuery.ajax({
-            url: url,
-            dataType: 'script',
-            success: callback,
-            async: true
-        });
-      }
-
-  $.loadScript("https://flashnotes-test.firebaseapp.com/", function(){
-    //Stuff
-  });
-
   </script>
     <h1 align="center">Flash Notes</h1>
-    <p align="center"><button id="play" onclick="gen()">Click to play a game.</button></p>
-    <p id="game" align="center"></p>
-    <p id="messages" align="center"></p>
+    <form action="https://flashnotes-test.firebaseapp.com/">
+      <input type="submit" id="next" value="Next">
+    </form>
 
   </body>
 </html>
