@@ -4,15 +4,26 @@
   </style>
   </head>
 
-  <body>
+  <body onload="chose()">
   <script>
-    setTimeout((function(){
-      window.open('','_self').close();
-    }),3000);
+    function chose()
+    {
+      call = Math.floor(Math.random() * 1);
+      if (call == 0)
+      {
+        document.getElementById("generate").action="https://flashnotes-test.firebaseapp.com/";
+      }
+      if (call == 1)
+      {
+        document.getElementById("generate").action="https://flashnotes-test.firebaseapp.com/";
+      }
+      }
+    }
   </script>
+
     <h1 align="center">Flash Notes</h1>
-    <form align="center" action="https://flashnotes-test.firebaseapp.com/">
-      <input type="submit" id="next" value="Play">
+    <form align="center" action="">
+      <input type="submit" id="generate" value="Play">
     </form>
   </body>
 
