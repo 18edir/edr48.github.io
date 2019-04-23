@@ -7,21 +7,22 @@
   <body>
   <script>
 
+      var form = document.getElementById("generate");
       call = Math.floor(Math.random() * 1);
       if (call == 0)
       {
-        document.getElementById("generate").action="https://flashnotes-test.firebaseapp.com/";
+        form.action = "https://flashnotes-test.firebaseapp.com/";
       }
       if (call == 1)
       {
-        document.getElementById("generate").action="https://flashnotes-test.firebaseapp.com/";
+        form.action = "https://flashnotes-test.firebaseapp.com/";
       }
 
   </script>
 
     <h1 align="center">Flash Notes</h1>
-    <form align="center" action="">
-      <input type="submit" id="generate" value="Play">
+    <form align="center" id="generate">
+      <input type="submit" value="Play">
     </form>
   </body>
 
