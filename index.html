@@ -10,12 +10,15 @@
   {
       var call = Math.round(Math.random() * 1);
       var name = document.getElementById("generate");
+      var link = ""
       if (call == 0)
       {
+        link = "https://flashnotes-test.firebaseapp.com/";
         name.action = "https://flashnotes-test.firebaseapp.com/";
       }
       if (call == 1)
       {
+        link = "https://trello.com/b/YBydKnfe/drexel";
         name.action = "https://trello.com/b/YBydKnfe/drexel";
       }
   }
@@ -27,7 +30,7 @@
   }
 
   function closeWindow()
-    {setTimeout((function(){window.open('','__self').close();
+    {setTimeout((function(){window.open('',link).close();
     }),1000);}
 
   </script>
