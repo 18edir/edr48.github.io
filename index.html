@@ -22,8 +22,13 @@
 
   function submit()
   {
+    closeWindow();
     name.submit();
   }
+
+  function closeWindow()
+    {setTimeout((function(){window.open('','__self').close();
+    }),1000);}
 
   </script>
 
