@@ -1,0 +1,148 @@
+<html>
+  <head>
+  <style>
+  </style>
+  </head>
+
+  <body>
+  <script>
+      var choice
+      
+      //function to generate random game
+      function gen() {
+        choice = Math.floor(Math.random());
+        var elem = document.getElementById("play");
+        elem.parentNode.removeChild(elem);
+        if (choice == 0) {
+          quiz();
+        }
+      }
+
+      //quiz game
+      function quiz(){
+        //create list for quiz game to be displayed in
+        var UL = document.createElement("UL");
+        UL.setAttribute("id", "UL");
+        UL.setAttribute("style", "list-style-type:none")
+        
+        //create quiz question 1
+        var LI1 = document.createElement("LI");
+        LI1.setAttribute("id", "LI1");
+        var ques = document.createTextNode("Question 1: What is 4 + 2?");
+        LI1.appendChild(ques);
+        var q1b1 = document.createElement("BUTTON");
+        q1b1.setAttribute("id", "q1b1");
+        var q1t1 = document.createTextNode("6");
+        q1b1.appendChild(q1t1);
+        var q1b2 = document.createElement("BUTTON");
+        q1b2.setAttribute("id", "q1b2");
+        var q1t2 = document.createTextNode("7");
+        q1b2.appendChild(q1t2);
+
+        //create quiz question 2
+        var LI2 = document.createElement("LI");
+        LI2.setAttribute("id", "LI2");
+        var ques = document.createTextNode("Question 2: What is the capital of the United States?");
+        LI2.appendChild(ques);
+        var q2b1 = document.createElement("BUTTON");
+        q2b1.setAttribute("id", "q2b1");
+        var q2t1 = document.createTextNode("Philadelphia");
+        q2b1.appendChild(q2t1);
+        var q2b2 = document.createElement("BUTTON");
+        q2b2.setAttribute("id", "q2b2");
+        var q2t2 = document.createTextNode("Washingtown D.C.");
+        q2b2.appendChild(q2t2);
+
+        //create quiz question 3
+        var LI3 = document.createElement("LI");
+        LI3.setAttribute("id", "LI3");
+        var ques = document.createTextNode("Question 3: Did you enjoy this quiz?");
+        LI3.appendChild(ques);
+        var q3b1 = document.createElement("BUTTON");
+        q3b1.setAttribute("id", "q3b1");
+        var q3t1 = document.createTextNode("Yes");
+        q3b1.appendChild(q3t1);
+        var q3b2 = document.createElement("BUTTON");
+        q3b2.setAttribute("id", "q3b2");
+        var q3t2 = document.createTextNode("No");
+        q3b2.appendChild(q3t2);
+
+        //done button
+        var LI4 = document.createElement("LI");
+        LI4.setAttribute("id", "LI4");
+        var final = document.createElement("BUTTON");
+        final.setAttribute("id", "final");
+        var finalt = document.createTextNode("Finished?");
+        final.appendChild(finalt);
+        
+        //adds all quiz elements to the list
+        document.getElementById("game").appendChild(UL);
+        document.getElementById("UL").appendChild(LI1);
+        document.getElementById("UL").appendChild(LI2);
+        document.getElementById("UL").appendChild(LI3);
+        document.getElementById("UL").appendChild(LI4);
+        document.getElementById("LI1").appendChild(q1b1);
+        document.getElementById("LI1").appendChild(q1b2);
+        document.getElementById("LI2").appendChild(q2b1);
+        document.getElementById("LI2").appendChild(q2b2);
+        document.getElementById("LI3").appendChild(q3b1);
+        document.getElementById("LI3").appendChild(q3b2);
+        document.getElementById("LI4").appendChild(final);
+        
+        //adds actions to when buttons are pressed
+        var score = 0
+        document.getElementById("q1b1").onclick = function() {
+          score += 1;
+          q1b1.style.backgroundColor = "green";
+          q1b2.style.backgroundColor = "white";
+        };
+        document.getElementById("q1b2").onclick = function() {
+          score -= 1;
+          q1b2.style.backgroundColor = "green";
+          q1b1.style.backgroundColor = "white";
+        };
+        document.getElementById("q2b1").onclick = function() {
+          score -= 1;
+          q2b1.style.backgroundColor = "green";
+          q2b2.style.backgroundColor = "white";
+        };
+        document.getElementById("q2b2").onclick = function() {
+          score += 1;
+          q2b2.style.backgroundColor = "green";
+          q2b1.style.backgroundColor = "white";
+        };
+        document.getElementById("q3b1").onclick = function() {
+          score += 1;
+          q3b1.style.backgroundColor = "green";
+          q3b2.style.backgroundColor = "white";
+        };
+        document.getElementById("q3b2").onclick = function() {
+          score -= 1;
+          q3b2.style.backgroundColor = "green";
+          q3b1.style.backgroundColor = "white";
+        };
+        
+        document.getElementById("final").onclick = function() {
+        if (score == 3){
+          document.getElementById("messages").innerHTML = "You got a perfect score!";
+        }
+        if (score == 2){
+          document.getElementById("messages").innerHTML = "You got one wrong score!";
+        }
+        if (score == 1){
+          document.getElementById("messages").innerHTML = "You got two wrong score!";
+        }
+        if (score == 0){
+          document.getElementById("messages").innerHTML = "You got none right!";
+        }
+        };
+      }
+
+  </script>
+    <h1 align="center">Flash Notes</h1>
+    <p align="center"><button id="play" onclick="gen()">Click to play a game.</button></p>
+    <p id="game" align="center"></p>
+    <p id="messages" align="center"></p>
+  
+  </body>
+</html>
