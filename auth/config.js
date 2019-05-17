@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: 'https://18edir.github.io/edr48.github.io/interface/homepage.html',
+    signInSuccessUrl: 'https://18edir.github.io/edr48.github.io/edr48.github.io-master/interface/homepage.html',
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
